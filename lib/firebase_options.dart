@@ -4,24 +4,56 @@ import 'package:flutter/foundation.dart'
 
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
+    // ── WEB (Chrome / Edge) ──────────────────
     if (kIsWeb) {
-      throw UnsupportedError('Web is not configured - use Android');
+      return web;
     }
+    // ── MOBILE / DESKTOP ────────────────────
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError('iOS is not configured');
+        return ios;
+      case TargetPlatform.windows:
+        return web; // Windows desktop — use web config
       default:
-        throw UnsupportedError('Unsupported platform');
+        throw UnsupportedError(
+          'DefaultFirebaseOptions are not supported for this platform.',
+        );
     }
   }
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCcsbw9US9Ooxc13gqE6a0dav8XClj848k',
-    appId: '1:925164197370:android:72341c0a37186093d18043',
-    messagingSenderId: '925164197370',
+  // ── WEB CONFIG (from your Firebase Console) ──
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBwRwg4ItxIwU9n8Wp4uE-B1graL4E5XJo',
+    authDomain: 'sitethiral-76afb.firebaseapp.com',
     projectId: 'sitethiral-76afb',
     storageBucket: 'sitethiral-76afb.firebasestorage.app',
+    messagingSenderId: '925164197370',
+    appId: '1:925164197370:web:94506d2741793e49d18043',
+  );
+
+  // ── ANDROID CONFIG ───────────────────────────
+  // (google-services.json இருந்தா auto fill ஆகும்)
+  // இல்லன்னா web config போட்டாலும் work ஆகும்
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyBwRwg4ItxIwU9n8Wp4uE-B1graL4E5XJo',
+    authDomain: 'sitethiral-76afb.firebaseapp.com',
+    projectId: 'sitethiral-76afb',
+    storageBucket: 'sitethiral-76afb.firebasestorage.app',
+    messagingSenderId: '925164197370',
+    appId: '1:925164197370:web:94506d2741793e49d18043',
+  );
+
+  // ── iOS CONFIG ───────────────────────────────
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyBwRwg4ItxIwU9n8Wp4uE-B1graL4E5XJo',
+    authDomain: 'sitethiral-76afb.firebaseapp.com',
+    projectId: 'sitethiral-76afb',
+    storageBucket: 'sitethiral-76afb.firebasestorage.app',
+    messagingSenderId: '925164197370',
+    appId: '1:925164197370:web:94506d2741793e49d18043',
+    iosClientId: '',
+    iosBundleId: 'com.sitethiral.app',
   );
 }
