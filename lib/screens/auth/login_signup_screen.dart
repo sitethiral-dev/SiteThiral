@@ -31,12 +31,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
       phoneNumber: '+91$phone',
       timeout: const Duration(seconds: 60),
 
-      // Android auto-verify (rare but possible)
       verificationCompleted: (PhoneAuthCredential credential) async {
         await FirebaseAuth.instance.signInWithCredential(credential);
       },
 
-      // Any error — wrong number, quota exceeded, etc.
       verificationFailed: (FirebaseAuthException e) {
         if (!mounted) return;
         setState(() => _isLoading = false);
@@ -48,7 +46,6 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
         );
       },
 
-      // OTP sent successfully → go to OTP screen
       codeSent: (String verificationId, int? resendToken) {
         if (!mounted) return;
         setState(() => _isLoading = false);
@@ -79,34 +76,30 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF1C2A72),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 60),
-              Container(
-                width: 72, height: 72,
-                decoration: BoxDecoration(
-                  color: const Color(0xFFF15A29),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: const Icon(Icons.construction, size: 40, color: Color(0xFF1C2A72)),
-              ),
-              const SizedBox(height: 24),
-              const Text('SiteThiral',
-                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold,
-                  color: Color(0xFFF15A29), letterSpacing: 1)),
-              const SizedBox(height: 4),
-              const Text('Construction Labour Hiring Platform',
-                style: TextStyle(fontSize: 13, color: Color(0xFFD4A857))),
               const SizedBox(height: 48),
+              Image.asset('assets/icon/icon_foreground.png', width: 64, height: 64),
+              const SizedBox(height: 20),
+              const Text('SiteThiral',
+                style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold,
+                  color: Colors.white, letterSpacing: 0.5)),
+              const SizedBox(height: 6),
+              Container(width: 40, height: 3,
+                decoration: BoxDecoration(color: const Color(0xFFF15A29), borderRadius: BorderRadius.circular(2))),
+              const SizedBox(height: 12),
+              const Text('Construction Labour Hiring Platform',
+                style: TextStyle(fontSize: 13, color: Colors.white60)),
+              const SizedBox(height: 40),
 
-              // Login / Signup Toggle
               Container(
+                padding: const EdgeInsets.all(4),
                 decoration: BoxDecoration(
                   color: const Color(0xFF2E3D90),
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(14),
                 ),
                 child: Row(
                   children: [
@@ -121,26 +114,32 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                 _isLogin
                   ? 'உங்கள் Mobile Number போடுங்கள்'
                   : 'Register பண்ண Number போடுங்கள்',
-                style: const TextStyle(fontSize: 13, color: Colors.white54),
+                style: const TextStyle(fontSize: 13, color: Colors.white54, fontWeight: FontWeight.w500),
               ),
               const SizedBox(height: 12),
 
-              // Phone Input
               Container(
                 decoration: BoxDecoration(
                   color: const Color(0xFF2E3D90),
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.3)),
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.25)),
                 ),
                 child: Row(
                   children: [
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                      decoration: const BoxDecoration(
-                        border: Border(right: BorderSide(color: Color(0xFF2A3040))),
+                      decoration: BoxDecoration(
+                        border: Border(right: BorderSide(color: Colors.white.withOpacity(0.08))),
                       ),
-                      child: const Text('+91',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                      child: const Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.phone_android, color: Color(0xFFF15A29), size: 18),
+                          SizedBox(width: 6),
+                          Text('+91',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
+                        ],
+                      ),
                     ),
                     Expanded(
                       child: TextField(
@@ -160,39 +159,47 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   ],
                 ),
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 28),
 
               SizedBox(
-                width: double.infinity, height: 52,
+                width: double.infinity, height: 54,
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _sendOTP,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFF15A29),
                     foregroundColor: const Color(0xFF1C2A72),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    elevation: 0,
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   child: _isLoading
                     ? const SizedBox(width: 24, height: 24,
                         child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
-                    : Text(_isLogin ? 'Login — OTP அனுப்பு' : 'Sign Up — OTP அனுப்பு'),
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(_isLogin ? 'Login — OTP அனுப்பு' : 'Sign Up — OTP அனுப்பு'),
+                          const SizedBox(width: 8),
+                          const Icon(Icons.arrow_forward, size: 18),
+                        ],
+                      ),
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 20),
               Center(
                 child: Text(
                   _isLogin ? 'புதியவரா? Sign Up பண்ணுங்கள்' : 'Already registered? Login பண்ணுங்கள்',
                   style: const TextStyle(fontSize: 12, color: Colors.white38),
                 ),
               ),
-              const Spacer(),
+              const SizedBox(height: 60),
               Center(
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 24),
                   child: Text(
                     'Workers • Contractors • Homeowners • Site Engineers',
                     style: TextStyle(fontSize: 11,
-                      color: Colors.white.withOpacity(0.2), letterSpacing: 1),
+                      color: Colors.white.withOpacity(0.25), letterSpacing: 1),
                   ),
                 ),
               ),
@@ -207,11 +214,12 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
     return Expanded(
       child: GestureDetector(
         onTap: onTap,
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: 14),
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: const EdgeInsets.symmetric(vertical: 13),
           decoration: BoxDecoration(
             color: isActive ? const Color(0xFFF15A29) : Colors.transparent,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Text(label,
             textAlign: TextAlign.center,

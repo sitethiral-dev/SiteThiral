@@ -23,6 +23,7 @@ import 'screens/profile_edit/edit_site_engineer_profile.dart';
 import 'screens/notifications/notifications_screen.dart';
 import 'screens/worker/booking_requests_screen.dart';
 import 'package:vibration/vibration.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,6 +41,8 @@ class SiteThiralApp extends StatelessWidget {
       theme: ThemeData(
         brightness: Brightness.dark,
         scaffoldBackgroundColor: const Color(0xFF1C2A72),
+        textTheme: GoogleFonts.plusJakartaSansTextTheme(ThemeData.dark().textTheme),
+        fontFamily: GoogleFonts.plusJakartaSans().fontFamily,
       ),
       home: const SplashScreen(),
     );
