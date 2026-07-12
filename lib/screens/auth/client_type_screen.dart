@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'homeowner_signup.dart';
 import 'contractor_signup.dart';
-import 'site_engineer_signup.dart';
+import 'site_engineer_choice_screen.dart';
 import 'qs_admin_signup.dart';
 
 class ClientTypeScreen extends StatelessWidget {
@@ -38,7 +38,7 @@ class ClientTypeScreen extends StatelessWidget {
               const SizedBox(height: 14),
               _typeCard(context, icon: Icons.engineering, title: 'Site Engineer', tamilText: 'தள பொறியாளர்',
                 subtitle: 'Sites manage பண்ணலாம்',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SiteEngineerSignupScreen()))),
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SiteEngineerChoiceScreen()))),
               const SizedBox(height: 14),
               _typeCard(context, icon: Icons.fact_check_outlined, title: 'QS / Admin', tamilText: 'நிர்வாகி',
                 subtitle: 'Company data cross-verify பண்ணலாம்',

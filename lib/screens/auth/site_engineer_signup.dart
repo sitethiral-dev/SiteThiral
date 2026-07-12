@@ -3,7 +3,9 @@ import 'package:sitethiral/main.dart';
 import 'package:sitethiral/screens/auth/user_service.dart';
 
 class SiteEngineerSignupScreen extends StatefulWidget {
-  const SiteEngineerSignupScreen({super.key});
+  final String? linkedCompanyId;
+  final String? linkedCompanyName;
+  const SiteEngineerSignupScreen({super.key, this.linkedCompanyId, this.linkedCompanyName});
   @override
   State<SiteEngineerSignupScreen> createState() => _SiteEngineerSignupScreenState();
 }
@@ -17,6 +19,14 @@ class _SiteEngineerSignupScreenState extends State<SiteEngineerSignupScreen> {
   String _selectedQualification = 'B.E. Civil';
   String _selectedSpecialization = 'Building Construction';
   bool _isLoading = false;
+
+  @override
+  void initState() {
+    super.initState();
+    if (widget.linkedCompanyName != null) {
+      _companyController.text = widget.linkedCompanyName!;
+    }
+  }
 
   final List<String> _qualifications = [
     'B.E. Civil', 'B.Tech Civil', 'Diploma Civil',
@@ -52,6 +62,8 @@ class _SiteEngineerSignupScreenState extends State<SiteEngineerSignupScreen> {
   company: _companyController.text.trim(),
   location: _locationController.text.trim(),
   license: _licenseController.text.trim(),
+  linkedCompanyId: widget.linkedCompanyId,
+  linkedCompanyName: widget.linkedCompanyName,
 );
 
     if (!mounted) return;

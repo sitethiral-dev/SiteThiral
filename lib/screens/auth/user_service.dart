@@ -123,6 +123,8 @@ class UserService {
     required String company,
     required String location,
     required String license,
+    String? linkedCompanyId,
+    String? linkedCompanyName,
   }) async {
     await _db.collection('users').doc(_uid).set({
       'uid':            _uid,
@@ -135,6 +137,8 @@ class UserService {
       'company':        company,
       'location':       location,
       'license':        license,
+      'linkedCompanyId':   linkedCompanyId,
+      'linkedCompanyName': linkedCompanyName,
       'isVerified':     license.isNotEmpty,
       'activeSites':    0,
       'createdAt':      FieldValue.serverTimestamp(),
