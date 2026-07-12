@@ -3,7 +3,8 @@ import 'package:sitethiral/main.dart';
 import 'package:sitethiral/screens/auth/user_service.dart';
 
 class WorkerSignupScreen extends StatefulWidget {
-  const WorkerSignupScreen({super.key});
+  final String workerType;
+  const WorkerSignupScreen({super.key, this.workerType = 'daily_wage'});
   @override
   State<WorkerSignupScreen> createState() => _WorkerSignupScreenState();
 }
@@ -138,6 +139,7 @@ class _WorkerSignupScreenState extends State<WorkerSignupScreen> {
       experience: _selectedExp,
       dailyRate: _rateController.text.trim(),
       location: _locationController.text.trim(),
+      workerType: widget.workerType,
     );
 
     if (!mounted) return;

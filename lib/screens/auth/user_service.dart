@@ -37,6 +37,7 @@ class UserService {
     required String dailyRate,
     required String location,
     String aadhaar = '',
+    String workerType = 'daily_wage',
   }) async {
     await _db.collection('users').doc(_uid).set({
       'uid':         _uid,
@@ -48,6 +49,7 @@ class UserService {
       'dailyRate':   dailyRate,
       'location':    location,
       'aadhaar':     aadhaar,
+      'workerType':  workerType,
       'isVerified':  false,
       'isAvailable': true,
       'rating':      0.0,

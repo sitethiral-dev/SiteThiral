@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'firebase_options.dart';
 import 'screens/auth/login_signup_screen.dart';
 import 'screens/auth/worker_signup.dart';
+import 'screens/auth/worker_type_screen.dart';
 import 'screens/auth/contractor_signup.dart';
 import 'screens/auth/homeowner_signup.dart';
 import 'screens/auth/site_engineer_signup.dart';
@@ -183,24 +184,27 @@ class SignupRoleSelectionScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 40),
-              const Text('நான் ஒரு...', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.white)),
+              const SizedBox(height: 24),
+              const Text('நான் ஒரு...', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white)),
               const SizedBox(height: 8),
-              const Text('உங்கள் role select பண்ணுங்கள்', style: TextStyle(fontSize: 14, color: Colors.white60)),
-              const SizedBox(height: 40),
-              _RoleCard(icon: Icons.construction, title: 'Worker', subtitle: 'Construction jobs\nfind பண்ணலாம்', tamilText: 'தொழிலாளி',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WorkerSignupScreen()))),
-              const SizedBox(height: 16),
+              Container(width: 40, height: 3,
+                decoration: BoxDecoration(color: const Color(0xFFF15A29), borderRadius: BorderRadius.circular(2))),
+              const SizedBox(height: 14),
+              const Text('உங்கள் role select பண்ணுங்கள்', style: TextStyle(fontSize: 14, color: Colors.white54)),
+              const SizedBox(height: 32),
+              _RoleCard(icon: Icons.construction, title: 'Worker', subtitle: 'Construction jobs find பண்ணலாம்', tamilText: 'தொழிலாளி',
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WorkerTypeScreen()))),
+              const SizedBox(height: 14),
               _RoleCard(icon: Icons.business_center, title: 'Contractor', subtitle: 'Workers hire பண்ணலாம்', tamilText: 'ஒப்பந்தக்காரர்',
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ContractorSignupScreen()))),
-              const SizedBox(height: 16),
-              _RoleCard(icon: Icons.home, title: 'Homeowner', subtitle: 'Home work\nbook பண்ணலாம்', tamilText: 'வீட்டுடையார்',
+              const SizedBox(height: 14),
+              _RoleCard(icon: Icons.home, title: 'Homeowner', subtitle: 'Home work book பண்ணலாம்', tamilText: 'வீட்டுடையார்',
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeownerSignupScreen()))),
-              const SizedBox(height: 16),
-              _RoleCard(icon: Icons.engineering, title: 'Site Engineer', subtitle: 'Sites manage\nபண்ணலாம்', tamilText: 'தள பொறியாளர்',
+              const SizedBox(height: 14),
+              _RoleCard(icon: Icons.engineering, title: 'Site Engineer', subtitle: 'Sites manage பண்ணலாம்', tamilText: 'தள பொறியாளர்',
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SiteEngineerSignupScreen()))),
-              const SizedBox(height: 16),
-              _RoleCard(icon: Icons.fact_check_outlined, title: 'QS / Admin', subtitle: 'Company data\ncross-verify பண்ணலாம்', tamilText: 'நிர்வாகி',
+              const SizedBox(height: 14),
+              _RoleCard(icon: Icons.fact_check_outlined, title: 'QS / Admin', subtitle: 'Company data cross-verify பண்ணலாம்', tamilText: 'நிர்வாகி',
                 onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const QsAdminSignupScreen()))),
               const SizedBox(height: 24),
             ],
@@ -221,30 +225,45 @@ class _RoleCard extends StatelessWidget {
   const _RoleCard({required this.icon, required this.title, required this.subtitle, required this.tamilText, required this.onTap});
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity, padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2)),
+    return Material(
+      color: const Color(0xFF2E3D90),
+      borderRadius: BorderRadius.circular(16),
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(16),
+        splashColor: const Color(0xFFF15A29).withOpacity(0.15),
+        child: Container(
+          width: double.infinity, padding: const EdgeInsets.all(18),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.18)),
+          ),
+          child: Row(children: [
+            Container(width: 54, height: 54,
+              decoration: BoxDecoration(color: const Color(0xFFF15A29), borderRadius: BorderRadius.circular(14)),
+              child: Icon(icon, color: Colors.white, size: 26)),
+            const SizedBox(width: 16),
+            Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(children: [
+                Text(title, style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold, color: Colors.white)),
+                const SizedBox(width: 8),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  decoration: BoxDecoration(color: const Color(0xFFD4A857).withOpacity(0.15), borderRadius: BorderRadius.circular(6)),
+                  child: Text(tamilText, style: const TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: Color(0xFFD4A857))),
+                ),
+              ]),
+              const SizedBox(height: 5),
+              Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.white54, height: 1.3)),
+            ])),
+            const SizedBox(width: 8),
+            Container(
+              width: 30, height: 30,
+              decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.12), shape: BoxShape.circle),
+              child: const Icon(Icons.arrow_forward_ios, color: Color(0xFFF15A29), size: 13),
+            ),
+          ]),
         ),
-        child: Row(children: [
-          Container(width: 56, height: 56,
-            decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(16)),
-            child: Icon(icon, color: const Color(0xFFF15A29), size: 28)),
-          const SizedBox(width: 16),
-          Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Row(children: [
-              Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
-              const SizedBox(width: 8),
-              Text(tamilText, style: const TextStyle(fontSize: 12, color: Color(0xFFD4A857))),
-            ]),
-            const SizedBox(height: 4),
-            Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.white54, height: 1.4)),
-          ])),
-          const Icon(Icons.arrow_forward_ios, color: Color(0xFFF15A29), size: 16),
-        ]),
       ),
     );
   }
