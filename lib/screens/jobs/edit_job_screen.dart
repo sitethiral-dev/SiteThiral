@@ -78,7 +78,7 @@ class _EditJobScreenState extends State<EditJobScreen> {
       );
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: Text('Job updated! ✓'), backgroundColor: Color(0xFF7ECFB3)));
+        content: Text('Job updated! ✓'), backgroundColor: Color(0xFFF15A29)));
       Navigator.pop(context);
     } catch (e) {
       setState(() => _isLoading = false);
@@ -90,9 +90,9 @@ class _EditJobScreenState extends State<EditJobScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10), elevation: 0,
+        backgroundColor: const Color(0xFF1C2A72), elevation: 0,
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios, color: Colors.white), onPressed: () => Navigator.pop(context)),
         title: const Text('Edit Job', style: TextStyle(color: Colors.white, fontSize: 16)),
       ),
@@ -123,7 +123,7 @@ class _EditJobScreenState extends State<EditJobScreen> {
             _label('Description (Optional)'),
             const SizedBox(height: 8),
             Container(
-              decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+              decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
               child: TextField(
                 controller: _descController, maxLines: 3,
                 style: const TextStyle(fontSize: 14, color: Colors.white),
@@ -136,8 +136,8 @@ class _EditJobScreenState extends State<EditJobScreen> {
             const SizedBox(height: 20),
             Container(
               padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: _isUrgent ? const Color(0xFFD4A857).withOpacity(0.4) : const Color(0xFF7ECFB3).withOpacity(0.2))),
+              decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: _isUrgent ? const Color(0xFFD4A857).withOpacity(0.4) : const Color(0xFFF15A29).withOpacity(0.2))),
               child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
                   Text('Urgent Hiring?', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -153,11 +153,11 @@ class _EditJobScreenState extends State<EditJobScreen> {
               child: ElevatedButton(
                 onPressed: _isLoading ? null : _save,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10),
+                  backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 child: _isLoading
-                    ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                    ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                     : const Text('Save Changes ✓'),
               ),
             ),
@@ -171,12 +171,12 @@ class _EditJobScreenState extends State<EditJobScreen> {
 
   Widget _textField(TextEditingController c, String hint, IconData icon, {bool isNumber = false}) {
     return Container(
-      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
       child: TextField(
         controller: c, keyboardType: isNumber ? TextInputType.number : TextInputType.text,
         style: const TextStyle(fontSize: 15, color: Colors.white),
         decoration: InputDecoration(hintText: hint, hintStyle: const TextStyle(color: Colors.white30, fontSize: 14),
-          prefixIcon: Icon(icon, color: const Color(0xFF7ECFB3), size: 20), border: InputBorder.none,
+          prefixIcon: Icon(icon, color: const Color(0xFFF15A29), size: 20), border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14)),
       ),
     );
@@ -185,12 +185,12 @@ class _EditJobScreenState extends State<EditJobScreen> {
   Widget _dropdown() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
-          value: _selectedSkill, isExpanded: true, dropdownColor: const Color(0xFF1A1F2E),
+          value: _selectedSkill, isExpanded: true, dropdownColor: const Color(0xFF2E3D90),
           style: const TextStyle(fontSize: 15, color: Colors.white),
-          icon: const Icon(Icons.keyboard_arrow_down, color: Color(0xFF7ECFB3)),
+          icon: const Icon(Icons.keyboard_arrow_down, color: Color(0xFFF15A29)),
           items: _skills.map((i) => DropdownMenuItem(value: i, child: Text(i))).toList(),
           onChanged: (v) => setState(() => _selectedSkill = v!)),
       ),

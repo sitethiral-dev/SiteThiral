@@ -135,7 +135,7 @@ class _OtpScreenState extends State<OtpScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Text('புதுசா OTP அனுப்பினோம்! ✓'),
-            backgroundColor: Color(0xFF7ECFB3),
+            backgroundColor: Color(0xFFF15A29),
           ),
         );
       },
@@ -153,7 +153,7 @@ class _OtpScreenState extends State<OtpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -169,7 +169,7 @@ class _OtpScreenState extends State<OtpScreen> {
               const SizedBox(height: 40),
               const Text('OTP Verify பண்ணுங்கள்',
                 style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold,
-                  color: Color(0xFF7ECFB3))),
+                  color: Color(0xFFF15A29))),
               const SizedBox(height: 8),
               Text(
                 '+91 ${widget.phone} க்கு code அனுப்பினோம்',
@@ -193,14 +193,14 @@ class _OtpScreenState extends State<OtpScreen> {
                     decoration: InputDecoration(
                       counterText: '',
                       filled: true,
-                      fillColor: const Color(0xFF1A1F2E),
+                      fillColor: const Color(0xFF2E3D90),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
                         borderSide: BorderSide.none,
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(12),
-                        borderSide: const BorderSide(color: Color(0xFF7ECFB3), width: 2),
+                        borderSide: const BorderSide(color: Color(0xFFF15A29), width: 2),
                       ),
                     ),
                     onChanged: (value) {
@@ -224,14 +224,14 @@ class _OtpScreenState extends State<OtpScreen> {
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _verifyOTP,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF7ECFB3),
-                    foregroundColor: const Color(0xFF080C10),
+                    backgroundColor: const Color(0xFFF15A29),
+                    foregroundColor: const Color(0xFF1C2A72),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   child: _isLoading
                     ? const SizedBox(width: 24, height: 24,
-                        child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                     : const Text('Verify & Continue'),
                 ),
               ),
@@ -245,7 +245,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       onTap: _resendOTP,
                       child: const Text('Resend OTP',
                         style: TextStyle(fontSize: 13,
-                          color: Color(0xFF7ECFB3), fontWeight: FontWeight.bold)),
+                          color: Color(0xFFF15A29), fontWeight: FontWeight.bold)),
                     ),
               ),
             ],

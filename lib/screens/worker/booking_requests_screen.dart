@@ -27,7 +27,7 @@ class BookingRequestsScreen extends StatelessWidget {
               stream: JobService.getPendingBookingsForWorker(),
               builder: (context, snap) {
                 if (snap.connectionState == ConnectionState.waiting) {
-                  return const Center(child: CircularProgressIndicator(color: Color(0xFF7ECFB3)));
+                  return const Center(child: CircularProgressIndicator(color: Color(0xFFF15A29)));
                 }
                 if (!snap.hasData || snap.data!.docs.isEmpty) {
                   return Center(
@@ -126,10 +126,10 @@ class _BookingCardState extends State<_BookingCard> {
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1F2E),
+        color: const Color(0xFF2E3D90),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: isUrgentLow ? Colors.redAccent.withOpacity(0.5) : const Color(0xFF7ECFB3).withOpacity(0.2),
+          color: isUrgentLow ? Colors.redAccent.withOpacity(0.5) : const Color(0xFFF15A29).withOpacity(0.2),
         ),
       ),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -141,17 +141,17 @@ class _BookingCardState extends State<_BookingCard> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             decoration: BoxDecoration(
-              color: (isUrgentLow ? Colors.redAccent : const Color(0xFF7ECFB3)).withOpacity(0.15),
+              color: (isUrgentLow ? Colors.redAccent : const Color(0xFFF15A29)).withOpacity(0.15),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(mainAxisSize: MainAxisSize.min, children: [
-              Icon(Icons.timer_outlined, size: 14, color: isUrgentLow ? Colors.redAccent : const Color(0xFF7ECFB3)),
+              Icon(Icons.timer_outlined, size: 14, color: isUrgentLow ? Colors.redAccent : const Color(0xFFF15A29)),
               const SizedBox(width: 4),
               Text('${_secondsLeft}s',
                   style: TextStyle(
                       fontSize: 13,
                       fontWeight: FontWeight.bold,
-                      color: isUrgentLow ? Colors.redAccent : const Color(0xFF7ECFB3))),
+                      color: isUrgentLow ? Colors.redAccent : const Color(0xFFF15A29))),
             ]),
           ),
         ]),
@@ -199,14 +199,14 @@ class _BookingCardState extends State<_BookingCard> {
             child: ElevatedButton(
               onPressed: (_acting || _secondsLeft <= 0) ? null : () => _respond(true),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF7ECFB3),
-                foregroundColor: const Color(0xFF080C10),
+                backgroundColor: const Color(0xFFF15A29),
+                foregroundColor: const Color(0xFF1C2A72),
                 padding: const EdgeInsets.symmetric(vertical: 12),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
               child: _acting
                   ? const SizedBox(
-                      width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                      width: 18, height: 18, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                   : const Text('Accept ✓', style: TextStyle(fontWeight: FontWeight.bold)),
             ),
           ),

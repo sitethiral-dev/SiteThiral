@@ -77,7 +77,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -88,15 +88,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               Container(
                 width: 72, height: 72,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF7ECFB3),
+                  color: const Color(0xFFF15A29),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Icon(Icons.construction, size: 40, color: Color(0xFF080C10)),
+                child: const Icon(Icons.construction, size: 40, color: Color(0xFF1C2A72)),
               ),
               const SizedBox(height: 24),
               const Text('SiteThiral',
                 style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold,
-                  color: Color(0xFF7ECFB3), letterSpacing: 1)),
+                  color: Color(0xFFF15A29), letterSpacing: 1)),
               const SizedBox(height: 4),
               const Text('Construction Labour Hiring Platform',
                 style: TextStyle(fontSize: 13, color: Color(0xFFD4A857))),
@@ -105,7 +105,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               // Login / Signup Toggle
               Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1A1F2E),
+                  color: const Color(0xFF2E3D90),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Row(
@@ -128,9 +128,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
               // Phone Input
               Container(
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1A1F2E),
+                  color: const Color(0xFF2E3D90),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.3)),
+                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.3)),
                 ),
                 child: Row(
                   children: [
@@ -167,14 +167,14 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _sendOTP,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF7ECFB3),
-                    foregroundColor: const Color(0xFF080C10),
+                    backgroundColor: const Color(0xFFF15A29),
+                    foregroundColor: const Color(0xFF1C2A72),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   child: _isLoading
                     ? const SizedBox(width: 24, height: 24,
-                        child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                     : Text(_isLogin ? 'Login — OTP அனுப்பு' : 'Sign Up — OTP அனுப்பு'),
                 ),
               ),
@@ -210,14 +210,14 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 14),
           decoration: BoxDecoration(
-            color: isActive ? const Color(0xFF7ECFB3) : Colors.transparent,
+            color: isActive ? const Color(0xFFF15A29) : Colors.transparent,
             borderRadius: BorderRadius.circular(12),
           ),
           child: Text(label,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 15, fontWeight: FontWeight.bold,
-              color: isActive ? const Color(0xFF080C10) : Colors.white54,
+              color: isActive ? const Color(0xFF1C2A72) : Colors.white54,
             )),
         ),
       ),

@@ -13,9 +13,9 @@ class JobDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final isUrgent = job['isUrgent'] ?? false;
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10),
+        backgroundColor: const Color(0xFF1C2A72),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
@@ -58,9 +58,9 @@ class JobDetailsScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF1A1F2E),
+                color: const Color(0xFF2E3D90),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.15)),
+                border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.15)),
               ),
               child: Column(children: [
                 _detailRow(Icons.business, 'Company', job['companyName'] ?? '-'),
@@ -82,9 +82,9 @@ class JobDetailsScreen extends StatelessWidget {
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1A1F2E),
+                  color: const Color(0xFF2E3D90),
                   borderRadius: BorderRadius.circular(14),
-                  border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1)),
+                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1)),
                 ),
                 child: Text(job['description'].toString(),
                   style: const TextStyle(fontSize: 14, color: Colors.white70, height: 1.6)),
@@ -107,7 +107,7 @@ class JobDetailsScreen extends StatelessWidget {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Applied! ✓ Contractor-ku notification போச்சு'),
-                        backgroundColor: Color(0xFF7ECFB3)));
+                        backgroundColor: Color(0xFFF15A29)));
                     Navigator.pop(context);
                   } catch (e) {
                     if (!context.mounted) return;
@@ -116,8 +116,8 @@ class JobDetailsScreen extends StatelessWidget {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF7ECFB3),
-                  foregroundColor: const Color(0xFF080C10),
+                  backgroundColor: const Color(0xFFF15A29),
+                  foregroundColor: const Color(0xFF1C2A72),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                 ),
@@ -133,7 +133,7 @@ class JobDetailsScreen extends StatelessWidget {
 
   Widget _detailRow(IconData icon, String label, String value) {
     return Row(children: [
-      Icon(icon, color: const Color(0xFF7ECFB3), size: 20),
+      Icon(icon, color: const Color(0xFFF15A29), size: 20),
       const SizedBox(width: 12),
       Expanded(
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [

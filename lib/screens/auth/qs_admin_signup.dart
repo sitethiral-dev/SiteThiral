@@ -57,9 +57,9 @@ class _QsAdminSignupScreenState extends State<QsAdminSignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10),
+        backgroundColor: const Color(0xFF1C2A72),
         elevation: 0,
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios, color: Colors.white), onPressed: () => Navigator.pop(context)),
         title: const Text('QS / Admin Setup', style: TextStyle(color: Colors.white, fontSize: 16)),
@@ -74,15 +74,15 @@ class _QsAdminSignupScreenState extends State<QsAdminSignupScreen> {
               Container(
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF7ECFB3).withOpacity(0.1),
+                  color: const Color(0xFFF15A29).withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.3)),
+                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.3)),
                 ),
                 child: Row(children: [
-                  const Icon(Icons.fact_check_outlined, color: Color(0xFF7ECFB3), size: 28),
+                  const Icon(Icons.fact_check_outlined, color: Color(0xFFF15A29), size: 28),
                   const SizedBox(width: 12),
                   Column(crossAxisAlignment: CrossAxisAlignment.start, children: const [
-                    Text('QS / Admin பதிவு', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                    Text('QS / Admin பதிவு', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                     Text('Company data cross-verify பண்ணும் role', style: TextStyle(fontSize: 12, color: Colors.white54)),
                   ]),
                 ]),
@@ -131,13 +131,13 @@ class _QsAdminSignupScreenState extends State<QsAdminSignupScreen> {
                 child: ElevatedButton(
                   onPressed: _isLoading ? null : _submitProfile,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF7ECFB3),
-                    foregroundColor: const Color(0xFF080C10),
+                    backgroundColor: const Color(0xFFF15A29),
+                    foregroundColor: const Color(0xFF1C2A72),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                     textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   child: _isLoading
-                      ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                      ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                       : const Text('Request Send பண்ணு ✓'),
                 ),
               ),
@@ -155,14 +155,14 @@ class _QsAdminSignupScreenState extends State<QsAdminSignupScreen> {
 
   Widget _buildTextField(TextEditingController controller, String hint, IconData icon) {
     return Container(
-      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
       child: TextField(
         controller: controller,
         style: const TextStyle(fontSize: 15, color: Colors.white),
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: const TextStyle(color: Colors.white30, fontSize: 14),
-          prefixIcon: Icon(icon, color: const Color(0xFF7ECFB3), size: 20),
+          prefixIcon: Icon(icon, color: const Color(0xFFF15A29), size: 20),
           border: InputBorder.none,
           contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
         ),
@@ -173,14 +173,14 @@ class _QsAdminSignupScreenState extends State<QsAdminSignupScreen> {
   Widget _buildDropdown(List<String> items, String value, Function(String?) onChanged) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
       child: DropdownButtonHideUnderline(
         child: DropdownButton<String>(
           value: value,
           isExpanded: true,
-          dropdownColor: const Color(0xFF1A1F2E),
+          dropdownColor: const Color(0xFF2E3D90),
           style: const TextStyle(fontSize: 15, color: Colors.white),
-          icon: const Icon(Icons.keyboard_arrow_down, color: Color(0xFF7ECFB3)),
+          icon: const Icon(Icons.keyboard_arrow_down, color: Color(0xFFF15A29)),
           items: items.map((item) => DropdownMenuItem(value: item, child: Text(item))).toList(),
           onChanged: onChanged,
         ),

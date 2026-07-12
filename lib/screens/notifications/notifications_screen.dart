@@ -28,14 +28,14 @@ class NotificationsScreen extends StatelessWidget {
       case 'qs_approved':
       case 'new_applicant':
       case 'booking':
-        return const Color(0xFF7ECFB3);
+        return const Color(0xFFF15A29);
       case 'rejected':
       case 'qs_rejected':
         return Colors.red;
       case 'qs_request':
         return const Color(0xFFD4A857);
       default:
-        return const Color(0xFF7ECFB3);
+        return const Color(0xFFF15A29);
     }
   }
 
@@ -53,9 +53,9 @@ class NotificationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10),
+        backgroundColor: const Color(0xFF1C2A72),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
@@ -65,7 +65,7 @@ class NotificationsScreen extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => JobService.markAllNotificationsRead(),
-            child: const Text('Mark all read', style: TextStyle(color: Color(0xFF7ECFB3), fontSize: 12)),
+            child: const Text('Mark all read', style: TextStyle(color: Color(0xFFF15A29), fontSize: 12)),
           ),
         ],
       ),
@@ -74,7 +74,7 @@ class NotificationsScreen extends StatelessWidget {
           stream: JobService.getMyNotifications(),
           builder: (context, snap) {
             if (snap.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator(color: Color(0xFF7ECFB3)));
+              return const Center(child: CircularProgressIndicator(color: Color(0xFFF15A29)));
             }
             if (!snap.hasData || snap.data!.docs.isEmpty) {
               return Center(
@@ -110,7 +110,7 @@ class NotificationsScreen extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 10),
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: isRead ? const Color(0xFF1A1F2E) : c.withOpacity(0.08),
+                      color: isRead ? const Color(0xFF2E3D90) : c.withOpacity(0.08),
                       borderRadius: BorderRadius.circular(14),
                       border: Border.all(color: isRead ? Colors.white12 : c.withOpacity(0.3)),
                     ),

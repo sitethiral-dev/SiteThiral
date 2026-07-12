@@ -21,9 +21,9 @@ class SelectWorkerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10),
+        backgroundColor: const Color(0xFF1C2A72),
         elevation: 0,
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios, color: Colors.white), onPressed: () => Navigator.pop(context)),
         title: Text('Select $serviceName Worker', style: const TextStyle(color: Colors.white, fontSize: 16)),
@@ -33,7 +33,7 @@ class SelectWorkerScreen extends StatelessWidget {
           stream: JobService.getAllWorkers(),
           builder: (context, snap) {
             if (snap.connectionState == ConnectionState.waiting) {
-              return const Center(child: CircularProgressIndicator(color: Color(0xFF7ECFB3)));
+              return const Center(child: CircularProgressIndicator(color: Color(0xFFF15A29)));
             }
             if (!snap.hasData) {
               return _empty();
@@ -67,16 +67,16 @@ class SelectWorkerScreen extends StatelessWidget {
                   margin: const EdgeInsets.only(bottom: 12),
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF1A1F2E),
+                    color: const Color(0xFF2E3D90),
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1)),
+                    border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1)),
                   ),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(children: [
                       Container(
                         width: 52, height: 52,
-                        decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), shape: BoxShape.circle),
-                        child: const Icon(Icons.person, color: Color(0xFF7ECFB3), size: 28),
+                        decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), shape: BoxShape.circle),
+                        child: const Icon(Icons.person, color: Color(0xFFF15A29), size: 28),
                       ),
                       const SizedBox(width: 14),
                       Expanded(
@@ -87,11 +87,11 @@ class SelectWorkerScreen extends StatelessWidget {
                               const SizedBox(width: 6),
                               Container(
                                 padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-                                decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), borderRadius: BorderRadius.circular(5)),
+                                decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(5)),
                                 child: const Row(mainAxisSize: MainAxisSize.min, children: [
-                                  Icon(Icons.verified, color: Color(0xFF7ECFB3), size: 10),
+                                  Icon(Icons.verified, color: Color(0xFFF15A29), size: 10),
                                   SizedBox(width: 2),
-                                  Text('Verified', style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                                  Text('Verified', style: TextStyle(fontSize: 8, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                                 ]),
                               ),
                             ],
@@ -121,8 +121,8 @@ class SelectWorkerScreen extends StatelessWidget {
                       if (dailyRate.toString().isNotEmpty)
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                          decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
-                          child: Text('Rs.$dailyRate/day', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                          decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+                          child: Text('Rs.$dailyRate/day', style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                         ),
                     ]),
                     const SizedBox(height: 12),
@@ -141,8 +141,8 @@ class SelectWorkerScreen extends StatelessWidget {
                           )));
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF7ECFB3),
-                          foregroundColor: const Color(0xFF080C10),
+                          backgroundColor: const Color(0xFFF15A29),
+                          foregroundColor: const Color(0xFF1C2A72),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         ),
                         child: const Text('Book இவரை ✓', style: TextStyle(fontWeight: FontWeight.bold)),

@@ -43,8 +43,8 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
       builder: (context, child) => Theme(
         data: ThemeData.dark().copyWith(
           colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF7ECFB3),
-            surface: Color(0xFF1A1F2E),
+            primary: Color(0xFFF15A29),
+            surface: Color(0xFF2E3D90),
           ),
         ),
         child: child!,
@@ -60,8 +60,8 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
       builder: (context, child) => Theme(
         data: ThemeData.dark().copyWith(
           colorScheme: const ColorScheme.dark(
-            primary: Color(0xFF7ECFB3),
-            surface: Color(0xFF1A1F2E),
+            primary: Color(0xFFF15A29),
+            surface: Color(0xFF2E3D90),
           ),
         ),
         child: child!,
@@ -92,7 +92,7 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
       if (!mounted) return;
       setState(() => _isLoading = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Booking confirmed! ✓'), backgroundColor: Color(0xFF7ECFB3)));
+        const SnackBar(content: Text('Booking confirmed! ✓'), backgroundColor: Color(0xFFF15A29)));
       Navigator.pop(context);
     } catch (e) {
       setState(() => _isLoading = false);
@@ -111,9 +111,9 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10),
+        backgroundColor: const Color(0xFF1C2A72),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
@@ -127,14 +127,14 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xFF7ECFB3).withOpacity(0.1),
+                color: const Color(0xFFF15A29).withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.3))),
+                border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.3))),
               child: Row(children: [
-                const Icon(Icons.home_repair_service, color: Color(0xFF7ECFB3), size: 28),
+                const Icon(Icons.home_repair_service, color: Color(0xFFF15A29), size: 28),
                 const SizedBox(width: 12),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  Text(widget.serviceName, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                  Text(widget.serviceName, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                   Text(widget.serviceNameTamil, style: const TextStyle(fontSize: 12, color: Colors.white54)),
                 ]),
               ]),
@@ -170,11 +170,11 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1A1F2E),
+                  color: const Color(0xFF2E3D90),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
                 child: Row(children: [
-                  const Icon(Icons.calendar_today_outlined, color: Color(0xFF7ECFB3), size: 20),
+                  const Icon(Icons.calendar_today_outlined, color: Color(0xFFF15A29), size: 20),
                   const SizedBox(width: 12),
                   Text(
                     _selectedDate == null
@@ -193,11 +193,11 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                 decoration: BoxDecoration(
-                  color: const Color(0xFF1A1F2E),
+                  color: const Color(0xFF2E3D90),
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+                  border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
                 child: Row(children: [
-                  const Icon(Icons.access_time, color: Color(0xFF7ECFB3), size: 20),
+                  const Icon(Icons.access_time, color: Color(0xFFF15A29), size: 20),
                   const SizedBox(width: 12),
                   Text(
                     _selectedTime == null ? 'Time select பண்ணுங்கள்' : _selectedTime!.format(context),
@@ -216,9 +216,9 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
             const SizedBox(height: 8),
             Container(
               decoration: BoxDecoration(
-                color: const Color(0xFF1A1F2E),
+                color: const Color(0xFF2E3D90),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+                border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
               child: TextField(
                 controller: _descController,
                 maxLines: 3,
@@ -238,12 +238,12 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
               child: ElevatedButton(
                 onPressed: _isLoading ? null : _submit,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF7ECFB3),
-                  foregroundColor: const Color(0xFF080C10),
+                  backgroundColor: const Color(0xFFF15A29),
+                  foregroundColor: const Color(0xFF1C2A72),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 child: _isLoading
-                  ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                  ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                   : const Text('Book Now ✓'),
               ),
             ),
@@ -259,9 +259,9 @@ class _BookServiceScreenState extends State<BookServiceScreen> {
   Widget _textField(TextEditingController c, String hint) {
     return Container(
       decoration: BoxDecoration(
-        color: const Color(0xFF1A1F2E),
+        color: const Color(0xFF2E3D90),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+        border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
       child: TextField(
         controller: c,
         style: const TextStyle(fontSize: 15, color: Colors.white),

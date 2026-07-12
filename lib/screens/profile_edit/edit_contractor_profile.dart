@@ -50,7 +50,7 @@ class _EditContractorProfileScreenState extends State<EditContractorProfileScree
       );
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Profile updated! ✓'), backgroundColor: Color(0xFF7ECFB3)));
+        const SnackBar(content: Text('Profile updated! ✓'), backgroundColor: Color(0xFFF15A29)));
       Navigator.pop(context);
     } catch (e) {
       setState(() => _isLoading = false);
@@ -62,9 +62,9 @@ class _EditContractorProfileScreenState extends State<EditContractorProfileScree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10), elevation: 0,
+        backgroundColor: const Color(0xFF1C2A72), elevation: 0,
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios, color: Colors.white), onPressed: () => Navigator.pop(context)),
         title: const Text('Edit Profile', style: TextStyle(color: Colors.white, fontSize: 16)),
       ),
@@ -100,11 +100,11 @@ class _EditContractorProfileScreenState extends State<EditContractorProfileScree
               child: ElevatedButton(
                 onPressed: _isLoading ? null : _save,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10),
+                  backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 child: _isLoading
-                    ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF080C10)))
+                    ? const SizedBox(width: 24, height: 24, child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF1C2A72)))
                     : const Text('Save Changes ✓'),
               ),
             ),
@@ -118,13 +118,13 @@ class _EditContractorProfileScreenState extends State<EditContractorProfileScree
 
   Widget _textField(TextEditingController c, String hint, IconData icon) {
     return Container(
-      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
       child: TextField(
         controller: c,
         style: const TextStyle(fontSize: 15, color: Colors.white),
         decoration: InputDecoration(
           hintText: hint, hintStyle: const TextStyle(color: Colors.white30, fontSize: 14),
-          prefixIcon: Icon(icon, color: const Color(0xFF7ECFB3), size: 20),
+          prefixIcon: Icon(icon, color: const Color(0xFFF15A29), size: 20),
           border: InputBorder.none, contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14)),
       ),
     );

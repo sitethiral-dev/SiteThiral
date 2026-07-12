@@ -39,7 +39,7 @@ class SiteThiralApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: const Color(0xFF080C10),
+        scaffoldBackgroundColor: const Color(0xFF1C2A72),
       ),
       home: const SplashScreen(),
     );
@@ -104,18 +104,18 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Container(
               width: 100, height: 100,
-              decoration: BoxDecoration(color: const Color(0xFF7ECFB3), borderRadius: BorderRadius.circular(24)),
-              child: const Icon(Icons.construction, size: 50, color: Color(0xFF080C10)),
+              decoration: BoxDecoration(color: const Color(0xFFF15A29), borderRadius: BorderRadius.circular(24)),
+              child: const Icon(Icons.construction, size: 50, color: Color(0xFF1C2A72)),
             ),
             const SizedBox(height: 24),
             const Text('SiteThiral',
-              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3), letterSpacing: 2)),
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Color(0xFFF15A29), letterSpacing: 2)),
             const SizedBox(height: 8),
             const Text('Construction Labour Hiring Platform',
               style: TextStyle(fontSize: 14, color: Color(0xFFD4A857), letterSpacing: 1)),
             const SizedBox(height: 40),
             const SizedBox(width: 24, height: 24,
-              child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFF7ECFB3))),
+              child: CircularProgressIndicator(strokeWidth: 2, color: Color(0xFFF15A29))),
           ],
         ),
       ),
@@ -169,9 +169,9 @@ class SignupRoleSelectionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF080C10), elevation: 0,
+        backgroundColor: const Color(0xFF1C2A72), elevation: 0,
         leading: IconButton(icon: const Icon(Icons.arrow_back_ios, color: Colors.white), onPressed: () => Navigator.pop(context)),
       ),
       body: SafeArea(
@@ -223,13 +223,13 @@ class _RoleCard extends StatelessWidget {
       child: Container(
         width: double.infinity, padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2)),
+          color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2)),
         ),
         child: Row(children: [
           Container(width: 56, height: 56,
-            decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), borderRadius: BorderRadius.circular(16)),
-            child: Icon(icon, color: const Color(0xFF7ECFB3), size: 28)),
+            decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(16)),
+            child: Icon(icon, color: const Color(0xFFF15A29), size: 28)),
           const SizedBox(width: 16),
           Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(children: [
@@ -240,7 +240,7 @@ class _RoleCard extends StatelessWidget {
             const SizedBox(height: 4),
             Text(subtitle, style: const TextStyle(fontSize: 12, color: Colors.white54, height: 1.4)),
           ])),
-          const Icon(Icons.arrow_forward_ios, color: Color(0xFF7ECFB3), size: 16),
+          const Icon(Icons.arrow_forward_ios, color: Color(0xFFF15A29), size: 16),
         ]),
       ),
     );
@@ -249,9 +249,9 @@ class _RoleCard extends StatelessWidget {
 
 AppBar _buildDashboardAppBar(BuildContext context, bool mounted) {
   return AppBar(
-    backgroundColor: const Color(0xFF080C10), elevation: 0,
+    backgroundColor: const Color(0xFF1C2A72), elevation: 0,
     automaticallyImplyLeading: false,
-    title: const Text('SiteThiral', style: TextStyle(color: Color(0xFF7ECFB3), fontWeight: FontWeight.bold, fontSize: 18)),
+    title: const Text('SiteThiral', style: TextStyle(color: Color(0xFFF15A29), fontWeight: FontWeight.bold, fontSize: 18)),
     actions: [
       IconButton(
         icon: const Icon(Icons.logout, color: Colors.white54, size: 20),
@@ -268,7 +268,7 @@ AppBar _buildDashboardAppBar(BuildContext context, bool mounted) {
 
 Widget _infoRow(IconData icon, String text) {
   return Row(children: [
-    Icon(icon, color: const Color(0xFF7ECFB3), size: 18),
+    Icon(icon, color: const Color(0xFFF15A29), size: 18),
     const SizedBox(width: 10),
     Expanded(child: Text(text, style: const TextStyle(fontSize: 14, color: Colors.white70))),
   ]);
@@ -277,9 +277,9 @@ Widget _infoRow(IconData icon, String text) {
 Widget _statCard(String value, String label, IconData icon) {
   return Expanded(child: Container(
     padding: const EdgeInsets.all(14),
-    decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+    decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
     child: Column(children: [
-      Icon(icon, color: const Color(0xFF7ECFB3), size: 20), const SizedBox(height: 6),
+      Icon(icon, color: const Color(0xFFF15A29), size: 20), const SizedBox(height: 6),
       Text(value, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
       Text(label, textAlign: TextAlign.center, style: const TextStyle(fontSize: 10, color: Colors.white38, height: 1.3)),
     ]),
@@ -309,8 +309,8 @@ Widget _bellIcon(BuildContext context) {
         }
         return Stack(clipBehavior: Clip.none, children: [
           Container(width: 44, height: 44,
-            decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), borderRadius: BorderRadius.circular(12)),
-            child: const Icon(Icons.notifications_outlined, color: Color(0xFF7ECFB3), size: 22)),
+            decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(12)),
+            child: const Icon(Icons.notifications_outlined, color: Color(0xFFF15A29), size: 22)),
           if (count > 0)
             Positioned(
               right: -4, top: -4,
@@ -319,7 +319,7 @@ Widget _bellIcon(BuildContext context) {
                 constraints: const BoxConstraints(minWidth: 18, minHeight: 18),
                 decoration: BoxDecoration(
                   color: Colors.red, shape: BoxShape.circle,
-                  border: Border.all(color: const Color(0xFF080C10), width: 2)),
+                  border: Border.all(color: const Color(0xFF1C2A72), width: 2)),
                 child: Text('$count', textAlign: TextAlign.center,
                   style: const TextStyle(fontSize: 10, color: Colors.white, fontWeight: FontWeight.bold)),
               ),
@@ -345,7 +345,7 @@ Widget _readonlyAttendanceRow(Map<String, dynamic> worker) {
         final data = snap.data!.data() as Map<String, dynamic>?;
         status = data?['status'] ?? 'not_marked';
       }
-      final Color sc = status == 'present' ? const Color(0xFF7ECFB3)
+      final Color sc = status == 'present' ? const Color(0xFFF15A29)
         : status == 'absent' ? Colors.red
         : status == 'late' ? const Color(0xFFD4A857)
         : Colors.white24;
@@ -355,9 +355,9 @@ Widget _readonlyAttendanceRow(Map<String, dynamic> worker) {
 
       return Container(
         margin: const EdgeInsets.only(bottom: 10), padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: sc.withOpacity(0.2))),
+        decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: sc.withOpacity(0.2))),
         child: Row(children: [
-          Container(width: 40, height: 40, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.person, color: Color(0xFF7ECFB3), size: 22)),
+          Container(width: 40, height: 40, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.person, color: Color(0xFFF15A29), size: 22)),
           const SizedBox(width: 12),
           Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text(workerName, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -383,11 +383,11 @@ Widget _starRow(double rating, {double size = 16}) {
 Widget _verifiedBadge() {
   return Container(
     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-    decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), borderRadius: BorderRadius.circular(6)),
+    decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(6)),
     child: Row(mainAxisSize: MainAxisSize.min, children: const [
-      Icon(Icons.verified, color: Color(0xFF7ECFB3), size: 12),
+      Icon(Icons.verified, color: Color(0xFFF15A29), size: 12),
       SizedBox(width: 3),
-      Text('Verified', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+      Text('Verified', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
     ]),
   );
 }
@@ -406,7 +406,7 @@ Future<void> showRatingDialog(BuildContext context, {
     context: context,
     builder: (ctx) => StatefulBuilder(
       builder: (ctx, setSt) => Dialog(
-        backgroundColor: const Color(0xFF1A1F2E),
+        backgroundColor: const Color(0xFF2E3D90),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -423,7 +423,7 @@ Future<void> showRatingDialog(BuildContext context, {
             })),
             const SizedBox(height: 16),
             Container(
-              decoration: BoxDecoration(color: const Color(0xFF080C10), borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+              decoration: BoxDecoration(color: const Color(0xFF1C2A72), borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
               child: TextField(
                 controller: reviewController, maxLines: 2,
                 style: const TextStyle(fontSize: 13, color: Colors.white),
@@ -440,7 +440,7 @@ Future<void> showRatingDialog(BuildContext context, {
                   if (ctx.mounted) Navigator.pop(ctx);
                   onDone();
                 },
-                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 child: const Text('Submit', style: TextStyle(fontWeight: FontWeight.bold)))),
             ]),
           ]),
@@ -467,7 +467,7 @@ Widget _rateOrDoneWidget(BuildContext context, {
       }
       return SizedBox(width: double.infinity, child: OutlinedButton.icon(
         onPressed: () => showRatingDialog(context, toUserId: toUserId, applicationId: applicationId, toName: toName, onDone: () {
-          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Rating submit ஆச்சு! நன்றி ✓'), backgroundColor: Color(0xFF7ECFB3)));
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Rating submit ஆச்சு! நன்றி ✓'), backgroundColor: Color(0xFFF15A29)));
         }),
         icon: const Icon(Icons.star_outline, size: 16),
         label: const Text('Rate செய்யுங்கள்', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
@@ -506,14 +506,14 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: SafeArea(child: IndexedStack(index: _selectedIndex, children: [_buildHomeTab(), const BookingRequestsScreen(), _buildMyJobsTab(), _buildProfileTab()])),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: const Color(0xFF1A1F2E), border: Border(top: BorderSide(color: const Color(0xFF7ECFB3).withOpacity(0.15)))),
+        decoration: BoxDecoration(color: const Color(0xFF2E3D90), border: Border(top: BorderSide(color: const Color(0xFFF15A29).withOpacity(0.15)))),
         child: BottomNavigationBar(
           currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i),
-          backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFF7ECFB3), unselectedItemColor: Colors.white38, elevation: 0,
+          backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFFF15A29), unselectedItemColor: Colors.white38, elevation: 0,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), activeIcon: Icon(Icons.home), label: 'Jobs'),
             BottomNavigationBarItem(icon: Icon(Icons.calendar_today_outlined), activeIcon: Icon(Icons.calendar_today), label: 'Bookings'),
@@ -541,14 +541,14 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
           width: double.infinity,
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
           decoration: BoxDecoration(
-            color: const Color(0xFF1A1F2E),
+            color: const Color(0xFF2E3D90),
             borderRadius: BorderRadius.circular(14),
-            border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.15)),
+            border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.15)),
           ),
           child: Row(children: [
             Icon(
               (_profile?['isAvailable'] ?? true) ? Icons.check_circle : Icons.pause_circle_outline,
-              color: (_profile?['isAvailable'] ?? true) ? const Color(0xFF7ECFB3) : Colors.white38,
+              color: (_profile?['isAvailable'] ?? true) ? const Color(0xFFF15A29) : Colors.white38,
               size: 22,
             ),
             const SizedBox(width: 10),
@@ -563,7 +563,7 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
             ),
             Switch(
               value: _profile?['isAvailable'] ?? true,
-              activeColor: const Color(0xFF7ECFB3),
+              activeColor: const Color(0xFFF15A29),
               onChanged: (val) async {
                 await JobService.setWorkerAvailability(val);
                 _loadProfile();
@@ -574,14 +574,14 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
         const SizedBox(height: 20),
         // ── Search bar ──
         Container(
-          decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.15))),
+          decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.15))),
           child: TextField(
             onChanged: (v) => setState(() => _searchQuery = v.toLowerCase()),
             style: const TextStyle(fontSize: 14, color: Colors.white),
             decoration: const InputDecoration(
               hintText: 'Title / location தேடுங்கள்...',
               hintStyle: TextStyle(color: Colors.white30, fontSize: 13),
-              prefixIcon: Icon(Icons.search, color: Color(0xFF7ECFB3), size: 20),
+              prefixIcon: Icon(Icons.search, color: Color(0xFFF15A29), size: 20),
               border: InputBorder.none, contentPadding: EdgeInsets.symmetric(vertical: 12)),
           ),
         ),
@@ -598,10 +598,10 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
                   child: Container(
                     padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                     decoration: BoxDecoration(
-                      color: _filterSkill == s ? const Color(0xFF7ECFB3) : const Color(0xFF1A1F2E),
+                      color: _filterSkill == s ? const Color(0xFFF15A29) : const Color(0xFF2E3D90),
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(_filterSkill == s ? 1 : 0.2))),
-                    child: Text(s, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: _filterSkill == s ? const Color(0xFF080C10) : Colors.white60)),
+                      border: Border.all(color: const Color(0xFFF15A29).withOpacity(_filterSkill == s ? 1 : 0.2))),
+                    child: Text(s, style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: _filterSkill == s ? const Color(0xFF1C2A72) : Colors.white60)),
                   ),
                 ),
               ),
@@ -614,7 +614,7 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
           stream: JobService.getOpenJobs(),
           builder: (context, snap) {
             if (snap.connectionState == ConnectionState.waiting) {
-              return const Center(child: Padding(padding: EdgeInsets.all(32), child: CircularProgressIndicator(color: Color(0xFF7ECFB3))));
+              return const Center(child: Padding(padding: EdgeInsets.all(32), child: CircularProgressIndicator(color: Color(0xFFF15A29))));
             }
             if (!snap.hasData || snap.data!.docs.isEmpty) {
               return _emptyState(Icons.work_off_outlined, 'இன்னும் jobs இல்லை\nகொஞ்சம் wait பண்ணுங்கள்!');
@@ -647,8 +647,8 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
       child: Container(
         margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: isUrgent ? const Color(0xFFD4A857).withOpacity(0.3) : const Color(0xFF7ECFB3).withOpacity(0.1)),
+          color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: isUrgent ? const Color(0xFFD4A857).withOpacity(0.3) : const Color(0xFFF15A29).withOpacity(0.1)),
         ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -673,21 +673,21 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
-              child: Text(job['wage'] ?? '', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3)))),
+              decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(8)),
+              child: Text(job['wage'] ?? '', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Color(0xFFF15A29)))),
             ElevatedButton(
               onPressed: () async {
                 try {
                   await JobService.applyForJob(jobId: jobId, jobTitle: job['title'] ?? '', contractorId: job['contractorId'] ?? '');
                   if (!mounted) return;
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Applied! ✓'), backgroundColor: Color(0xFF7ECFB3)));
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Applied! ✓'), backgroundColor: Color(0xFFF15A29)));
                 } catch (e) {
                   if (!mounted) return;
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Error: $e'), backgroundColor: Colors.red));
                 }
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10),
+                backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72),
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
               child: const Text('Apply', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold))),
@@ -712,12 +712,12 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
               ...snap.data!.docs.map((d) {
                 final data = d.data() as Map<String, dynamic>;
                 final status = data['status'] ?? 'pending';
-                final Color sc = (status == 'shortlisted' || status == 'completed') ? const Color(0xFF7ECFB3)
+                final Color sc = (status == 'shortlisted' || status == 'completed') ? const Color(0xFFF15A29)
                   : status == 'rejected' ? Colors.red : const Color(0xFFD4A857);
 
                 return Container(
                   margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(14), border: Border.all(color: sc.withOpacity(0.2))),
+                  decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(14), border: Border.all(color: sc.withOpacity(0.2))),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(children: [
                       Container(width: 44, height: 44, decoration: BoxDecoration(color: sc.withOpacity(0.1), borderRadius: BorderRadius.circular(12)), child: Icon(Icons.work_outline, color: sc, size: 22)),
@@ -739,9 +739,9 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
                       const SizedBox(height: 12),
                       Container(
                         width: double.infinity, padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.08), borderRadius: BorderRadius.circular(10)),
+                        decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.08), borderRadius: BorderRadius.circular(10)),
                         child: Row(children: [
-                          const Icon(Icons.phone, color: Color(0xFF7ECFB3), size: 18),
+                          const Icon(Icons.phone, color: Color(0xFFF15A29), size: 18),
                           const SizedBox(width: 10),
                           Expanded(child: Text('+91 ${data['contractorPhone']} - call பண்ணுங்கள்!',
                             style: const TextStyle(fontSize: 13, color: Colors.white, fontWeight: FontWeight.bold))),
@@ -775,8 +775,8 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
       child: Column(children: [
         const SizedBox(height: 20),
         Container(width: 88, height: 88,
-          decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: const Color(0xFF7ECFB3), width: 2)),
-          child: const Icon(Icons.person, color: Color(0xFF7ECFB3), size: 44)),
+          decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: const Color(0xFFF15A29), width: 2)),
+          child: const Icon(Icons.person, color: Color(0xFFF15A29), size: 44)),
         const SizedBox(height: 16),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(name, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -801,7 +801,7 @@ class _WorkerDashboardState extends State<WorkerDashboard> {
           },
           icon: const Icon(Icons.edit_outlined, size: 18),
           label: const Text('Edit Profile'),
-          style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFF7ECFB3), side: const BorderSide(color: Color(0xFF7ECFB3)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+          style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFFF15A29), side: const BorderSide(color: Color(0xFFF15A29)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
         )),
       ]),
     );
@@ -836,12 +836,12 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: SafeArea(child: IndexedStack(index: _selectedIndex, children: [_buildHomeTab(), _buildApplicantsTab(), _buildTeamTab(), _buildProfileTab()])),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: const Color(0xFF1A1F2E), border: Border(top: BorderSide(color: const Color(0xFF7ECFB3).withOpacity(0.15)))),
-        child: BottomNavigationBar(currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i), backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFF7ECFB3), unselectedItemColor: Colors.white38, elevation: 0,
+        decoration: BoxDecoration(color: const Color(0xFF2E3D90), border: Border(top: BorderSide(color: const Color(0xFFF15A29).withOpacity(0.15)))),
+        child: BottomNavigationBar(currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i), backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFFF15A29), unselectedItemColor: Colors.white38, elevation: 0,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.work_outline), activeIcon: Icon(Icons.work), label: 'Jobs'),
             BottomNavigationBarItem(icon: Icon(Icons.people_outline), activeIcon: Icon(Icons.people), label: 'Applicants'),
@@ -869,7 +869,7 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
             onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const PostJobScreen())),
             icon: const Icon(Icons.add_circle_outline), label: const Text('Post a Job'),
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10),
+              backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)), textStyle: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)))),
         const SizedBox(height: 24),
         const Text('My Posted Jobs', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -877,7 +877,7 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
         StreamBuilder<QuerySnapshot>(
           stream: JobService.getMyJobs(),
           builder: (context, snap) {
-            if (snap.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator(color: Color(0xFF7ECFB3)));
+            if (snap.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator(color: Color(0xFFF15A29)));
             if (!snap.hasData || snap.data!.docs.isEmpty) return _emptyState(Icons.post_add, 'இன்னும் jobs post பண்ணல\nமேலே button click பண்ணுங்கள்!');
             return Column(children: snap.data!.docs.map((d) {
               final data = d.data() as Map<String, dynamic>;
@@ -886,7 +886,7 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
               final isClosed = jobStatus == 'closed';
               return Container(
                 margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(16), border: Border.all(color: isClosed ? Colors.white12 : const Color(0xFF7ECFB3).withOpacity(0.1))),
+                decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(16), border: Border.all(color: isClosed ? Colors.white12 : const Color(0xFFF15A29).withOpacity(0.1))),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                     Expanded(child: Row(children: [
@@ -897,32 +897,32 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
                       onTap: () => setState(() => _selectedIndex = 1),
                       child: Container(
                         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                        decoration: BoxDecoration(color: count > 0 ? const Color(0xFF7ECFB3).withOpacity(0.15) : Colors.white12, borderRadius: BorderRadius.circular(8)),
-                        child: Text('$count applied', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: count > 0 ? const Color(0xFF7ECFB3) : Colors.white38)))),
+                        decoration: BoxDecoration(color: count > 0 ? const Color(0xFFF15A29).withOpacity(0.15) : Colors.white12, borderRadius: BorderRadius.circular(8)),
+                        child: Text('$count applied', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: count > 0 ? const Color(0xFFF15A29) : Colors.white38)))),
                   ]),
                   const SizedBox(height: 8),
                   Row(children: [
                     const Icon(Icons.location_on, size: 13, color: Colors.white38), const SizedBox(width: 4),
                     Text(data['location'] ?? '', style: const TextStyle(fontSize: 12, color: Colors.white54)),
                     const SizedBox(width: 12),
-                    Text(data['wage'] ?? '', style: const TextStyle(fontSize: 12, color: Color(0xFF7ECFB3), fontWeight: FontWeight.bold)),
+                    Text(data['wage'] ?? '', style: const TextStyle(fontSize: 12, color: Color(0xFFF15A29), fontWeight: FontWeight.bold)),
                   ]),
                   const SizedBox(height: 12),
                   Row(children: [
                     Expanded(child: OutlinedButton.icon(
                       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => EditJobScreen(jobId: d.id, job: data))),
                       icon: const Icon(Icons.edit_outlined, size: 14), label: const Text('Edit', style: TextStyle(fontSize: 12)),
-                      style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFF7ECFB3), side: BorderSide(color: const Color(0xFF7ECFB3).withOpacity(0.4)), padding: const EdgeInsets.symmetric(vertical: 6), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))))),
+                      style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFFF15A29), side: BorderSide(color: const Color(0xFFF15A29).withOpacity(0.4)), padding: const EdgeInsets.symmetric(vertical: 6), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))))),
                     const SizedBox(width: 8),
                     Expanded(child: OutlinedButton.icon(
                       onPressed: () async {
                         await JobService.setJobStatus(d.id, isClosed ? 'open' : 'closed');
                         if (!mounted) return;
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(isClosed ? 'Job reopened ✓' : 'Job closed ✓'), backgroundColor: const Color(0xFF7ECFB3)));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(isClosed ? 'Job reopened ✓' : 'Job closed ✓'), backgroundColor: const Color(0xFFF15A29)));
                       },
                       icon: Icon(isClosed ? Icons.refresh : Icons.lock_outline, size: 14),
                       label: Text(isClosed ? 'Reopen' : 'Close', style: const TextStyle(fontSize: 12)),
-                      style: OutlinedButton.styleFrom(foregroundColor: isClosed ? const Color(0xFF7ECFB3) : const Color(0xFFD4A857), side: BorderSide(color: (isClosed ? const Color(0xFF7ECFB3) : const Color(0xFFD4A857)).withOpacity(0.4)), padding: const EdgeInsets.symmetric(vertical: 6), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))))),
+                      style: OutlinedButton.styleFrom(foregroundColor: isClosed ? const Color(0xFFF15A29) : const Color(0xFFD4A857), side: BorderSide(color: (isClosed ? const Color(0xFFF15A29) : const Color(0xFFD4A857)).withOpacity(0.4)), padding: const EdgeInsets.symmetric(vertical: 6), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))))),
                   ]),
                 ]),
               );
@@ -945,14 +945,14 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
             const Text('உங்கள் jobs-க்கு apply பண்ணவங்க', style: TextStyle(fontSize: 13, color: Colors.white38)),
             const SizedBox(height: 16),
             Container(
-              decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.15))),
+              decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.15))),
               child: TextField(
                 onChanged: (v) => setState(() => _applicantSearch = v.toLowerCase()),
                 style: const TextStyle(fontSize: 14, color: Colors.white),
                 decoration: const InputDecoration(
                   hintText: 'Worker name தேடுங்கள்...',
                   hintStyle: TextStyle(color: Colors.white30, fontSize: 13),
-                  prefixIcon: Icon(Icons.search, color: Color(0xFF7ECFB3), size: 20),
+                  prefixIcon: Icon(Icons.search, color: Color(0xFFF15A29), size: 20),
                   border: InputBorder.none, contentPadding: EdgeInsets.symmetric(vertical: 12)),
               ),
             ),
@@ -972,15 +972,15 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
                 return filtered.map((d) {
                 final data = d.data() as Map<String, dynamic>;
                 final status = data['status'] ?? 'pending';
-                final Color sc = status == 'shortlisted' ? const Color(0xFF7ECFB3)
-                  : status == 'completed' ? const Color(0xFF7ECFB3)
+                final Color sc = status == 'shortlisted' ? const Color(0xFFF15A29)
+                  : status == 'completed' ? const Color(0xFFF15A29)
                   : status == 'rejected' ? Colors.red : const Color(0xFFD4A857);
                 return Container(
                   margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(16), border: Border.all(color: sc.withOpacity(0.2))),
+                  decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(16), border: Border.all(color: sc.withOpacity(0.2))),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(children: [
-                      Container(width: 48, height: 48, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.person, color: Color(0xFF7ECFB3), size: 26)),
+                      Container(width: 48, height: 48, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.person, color: Color(0xFFF15A29), size: 26)),
                       const SizedBox(width: 12),
                       Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                         Text(data['workerName'] ?? '', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -1002,11 +1002,11 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
                       const SizedBox(width: 12),
                       Expanded(child: ElevatedButton(
                         onPressed: () => _updateApplicationStatus(d.id, 'shortlisted'),
-                        style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                        style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                         child: const Text('Shortlist ✓', style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold)))),
                     ]),
                     if (status == 'shortlisted') Column(children: [
-                      Container(width: double.infinity, padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(10)), child: const Text('✓ Shortlisted - Worker-ku notification போச்சு', textAlign: TextAlign.center, style: TextStyle(fontSize: 12, color: Color(0xFF7ECFB3)))),
+                      Container(width: double.infinity, padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(10)), child: const Text('✓ Shortlisted - Worker-ku notification போச்சு', textAlign: TextAlign.center, style: TextStyle(fontSize: 12, color: Color(0xFFF15A29)))),
                       const SizedBox(height: 10),
                       SizedBox(width: double.infinity, child: OutlinedButton.icon(
                         onPressed: () => _markJobCompleted(d.id, data['workerName'] ?? ''),
@@ -1015,7 +1015,7 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
                         style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFFD4A857), side: BorderSide(color: const Color(0xFFD4A857).withOpacity(0.5)), padding: const EdgeInsets.symmetric(vertical: 10), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))))),
                     ]),
                     if (status == 'completed') Column(children: [
-                      Container(width: double.infinity, padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(10)), child: const Text('✓ Job Completed', textAlign: TextAlign.center, style: TextStyle(fontSize: 12, color: Color(0xFF7ECFB3), fontWeight: FontWeight.bold))),
+                      Container(width: double.infinity, padding: const EdgeInsets.all(10), decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(10)), child: const Text('✓ Job Completed', textAlign: TextAlign.center, style: TextStyle(fontSize: 12, color: Color(0xFFF15A29), fontWeight: FontWeight.bold))),
                       const SizedBox(height: 10),
                       _rateOrDoneWidget(context, applicationId: d.id, toUserId: data['workerId'] ?? '', toName: data['workerName'] ?? 'Worker'),
                     ]),
@@ -1032,14 +1032,14 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
   void _markJobCompleted(String applicationId, String workerName) async {
     await JobService.markApplicationCompleted(applicationId);
     if (!mounted) return;
-    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$workerName-ஓட job complete ஆச்சு ✓'), backgroundColor: const Color(0xFF7ECFB3)));
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('$workerName-ஓட job complete ஆச்சு ✓'), backgroundColor: const Color(0xFFF15A29)));
   }
 
   Future<void> _updateApplicationStatus(String docId, String newStatus) async {
     await JobService.updateApplicationStatus(docId, newStatus);
     if (!mounted) return;
     final msg = newStatus == 'shortlisted' ? 'Shortlisted! Worker notified ✓' : 'Rejected';
-    final color = newStatus == 'shortlisted' ? const Color(0xFF7ECFB3) : Colors.red;
+    final color = newStatus == 'shortlisted' ? const Color(0xFFF15A29) : Colors.red;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg), backgroundColor: color));
   }
 
@@ -1064,14 +1064,14 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
           builder: (context, snap) {
             if (!snap.hasData || snap.data!.docs.isEmpty) {
               return Container(padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12)),
+                decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12)),
                 child: const Text('இன்னும் requests இல்லை', style: TextStyle(color: Colors.white38, fontSize: 13)));
             }
             return Column(children: snap.data!.docs.map((d) {
               final data = d.data() as Map<String, dynamic>;
               return Container(
                 margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFD4A857).withOpacity(0.2))),
+                decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFD4A857).withOpacity(0.2))),
                 child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   Row(children: [
                     Container(width: 44, height: 44, decoration: BoxDecoration(color: const Color(0xFFD4A857).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.fact_check_outlined, color: Color(0xFFD4A857), size: 22)),
@@ -1099,7 +1099,7 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
                     const SizedBox(width: 8),
                     Expanded(child: ElevatedButton(
                       onPressed: () => _handleQsAction(d.id, 'full'),
-                      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10), padding: const EdgeInsets.symmetric(vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+                      style: ElevatedButton.styleFrom(backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72), padding: const EdgeInsets.symmetric(vertical: 8), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
                       child: const Text('Full Access', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)))),
                   ]),
                 ]),
@@ -1109,14 +1109,14 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
         ),
         const SizedBox(height: 28),
 
-        const Text('Approved Team', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+        const Text('Approved Team', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
         const SizedBox(height: 12),
         StreamBuilder<QuerySnapshot>(
           stream: JobService.getApprovedQsTeam(company),
           builder: (context, snap) {
             if (!snap.hasData || snap.data!.docs.isEmpty) {
               return Container(padding: const EdgeInsets.all(16),
-                decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12)),
+                decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12)),
                 child: const Text('இன்னும் team members இல்லை', style: TextStyle(color: Colors.white38, fontSize: 13)));
             }
             return Column(children: snap.data!.docs.map((d) {
@@ -1124,9 +1124,9 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
               final perm = data['permissionLevel'] ?? 'attendance_only';
               return Container(
                 margin: const EdgeInsets.only(bottom: 10), padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.15))),
+                decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.15))),
                 child: Row(children: [
-                  Container(width: 40, height: 40, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.verified_user, color: Color(0xFF7ECFB3), size: 20)),
+                  Container(width: 40, height: 40, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.verified_user, color: Color(0xFFF15A29), size: 20)),
                   const SizedBox(width: 12),
                   Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Text(data['name'] ?? '', style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -1154,7 +1154,7 @@ class _ContractorDashboardState extends State<ContractorDashboard> {
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       content: Text(action == 'reject' ? 'Rejected' : 'Approved with ${action == 'full' ? 'Full' : 'Attendance Only'} access'),
-      backgroundColor: action == 'reject' ? Colors.red : const Color(0xFF7ECFB3)));
+      backgroundColor: action == 'reject' ? Colors.red : const Color(0xFFF15A29)));
   }
 
   void _revokeQs(String userId) async {
@@ -1240,12 +1240,12 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: SafeArea(child: IndexedStack(index: _selectedIndex, children: [_buildHomeTab(), _buildRequestsTab(), _buildProfileTab()])),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: const Color(0xFF1A1F2E), border: Border(top: BorderSide(color: const Color(0xFF7ECFB3).withOpacity(0.15)))),
-        child: BottomNavigationBar(currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i), backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFF7ECFB3), unselectedItemColor: Colors.white38, elevation: 0,
+        decoration: BoxDecoration(color: const Color(0xFF2E3D90), border: Border(top: BorderSide(color: const Color(0xFFF15A29).withOpacity(0.15)))),
+        child: BottomNavigationBar(currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i), backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFFF15A29), unselectedItemColor: Colors.white38, elevation: 0,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.home_outlined), activeIcon: Icon(Icons.home), label: 'Services'),
             BottomNavigationBarItem(icon: Icon(Icons.list_alt_outlined), activeIcon: Icon(Icons.list_alt), label: 'Requests'),
@@ -1269,8 +1269,8 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
         const SizedBox(height: 20),
         Container(width: double.infinity, padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [const Color(0xFF7ECFB3).withOpacity(0.3), const Color(0xFF080C10)], begin: Alignment.centerLeft, end: Alignment.centerRight),
-            borderRadius: BorderRadius.circular(16), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.2))),
+            gradient: LinearGradient(colors: [const Color(0xFFF15A29).withOpacity(0.3), const Color(0xFF1C2A72)], begin: Alignment.centerLeft, end: Alignment.centerRight),
+            borderRadius: BorderRadius.circular(16), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.2))),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text('Get your home fixed!', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
             const SizedBox(height: 4),
@@ -1305,9 +1305,9 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
         },
         child: Container(
           padding: const EdgeInsets.all(16),
-          decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(16), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+          decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(16), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center, children: [
-            Icon(s['icon'] as IconData, color: const Color(0xFF7ECFB3), size: 28),
+            Icon(s['icon'] as IconData, color: const Color(0xFFF15A29), size: 28),
             const SizedBox(height: 8),
             Text(s['name'] as String, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
             Text(s['tamilName'] as String, style: const TextStyle(fontSize: 11, color: Color(0xFFD4A857))),
@@ -1342,8 +1342,8 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
                 final status = data['status'] ?? 'pending';
                 final workerName = (data['workerName'] ?? '').toString();
                 final workerPhone = (data['workerPhone'] ?? '').toString();
-                final Color sc = status == 'completed' ? const Color(0xFF7ECFB3)
-                  : status == 'in_progress' ? const Color(0xFF7ECFB3)
+                final Color sc = status == 'completed' ? const Color(0xFFF15A29)
+                  : status == 'in_progress' ? const Color(0xFFF15A29)
                   : status == 'accepted' ? const Color(0xFFD4A857)
                   : status == 'requested' ? Colors.blueAccent
                   : status == 'rejected' ? Colors.redAccent
@@ -1360,10 +1360,10 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
                   : status;
                 return Container(
                   margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+                  decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(children: [
-                      Container(width: 44, height: 44, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(12)), child: const Icon(Icons.home_repair_service, color: Color(0xFF7ECFB3), size: 22)),
+                      Container(width: 44, height: 44, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(12)), child: const Icon(Icons.home_repair_service, color: Color(0xFFF15A29), size: 22)),
                       const SizedBox(width: 14),
                       Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                         Text(data['serviceName'] ?? '', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -1402,7 +1402,7 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
       padding: const EdgeInsets.all(20),
       child: Column(children: [
         const SizedBox(height: 20),
-        Container(width: 88, height: 88, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: const Color(0xFF7ECFB3), width: 2)), child: const Icon(Icons.home, color: Color(0xFF7ECFB3), size: 44)),
+        Container(width: 88, height: 88, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: const Color(0xFFF15A29), width: 2)), child: const Icon(Icons.home, color: Color(0xFFF15A29), size: 44)),
         const SizedBox(height: 16),
         Text(name, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white)),
         if (propType.isNotEmpty) Text('Homeowner - $propType', style: const TextStyle(fontSize: 13, color: Color(0xFFD4A857))),
@@ -1417,7 +1417,7 @@ class _HomeownerDashboardState extends State<HomeownerDashboard> {
           },
           icon: const Icon(Icons.edit_outlined, size: 18),
           label: const Text('Edit Profile'),
-          style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFF7ECFB3), side: const BorderSide(color: Color(0xFF7ECFB3)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+          style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFFF15A29), side: const BorderSide(color: Color(0xFFF15A29)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
         )),
       ]),
     );
@@ -1452,12 +1452,12 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: SafeArea(child: IndexedStack(index: _selectedIndex, children: [_buildHomeTab(), _buildSitesTab(), _buildPayrollTab(), _buildProfileTab()])),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(color: const Color(0xFF1A1F2E), border: Border(top: BorderSide(color: const Color(0xFF7ECFB3).withOpacity(0.15)))),
-        child: BottomNavigationBar(currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i), backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFF7ECFB3), unselectedItemColor: Colors.white38, elevation: 0,
+        decoration: BoxDecoration(color: const Color(0xFF2E3D90), border: Border(top: BorderSide(color: const Color(0xFFF15A29).withOpacity(0.15)))),
+        child: BottomNavigationBar(currentIndex: _selectedIndex, onTap: (i) => setState(() => _selectedIndex = i), backgroundColor: Colors.transparent, selectedItemColor: const Color(0xFFF15A29), unselectedItemColor: Colors.white38, elevation: 0,
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.dashboard_outlined), activeIcon: Icon(Icons.dashboard), label: 'Dashboard'),
             BottomNavigationBarItem(icon: Icon(Icons.location_city_outlined), activeIcon: Icon(Icons.location_city), label: 'My Sites'),
@@ -1538,7 +1538,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
           stream: JobService.getShortlistedWorkersByCompany(company),
           builder: (context, snap) {
             if (snap.connectionState == ConnectionState.waiting) {
-              return const Center(child: Padding(padding: EdgeInsets.all(32), child: CircularProgressIndicator(color: Color(0xFF7ECFB3))));
+              return const Center(child: Padding(padding: EdgeInsets.all(32), child: CircularProgressIndicator(color: Color(0xFFF15A29))));
             }
             if (!snap.hasData || snap.data!.docs.isEmpty) {
               return _emptyState(Icons.people_outline, 'இன்னும் shortlisted workers இல்லை\nContractor workers shortlist பண்ணினா இங்க தெரியும்!');
@@ -1564,7 +1564,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
           final data = snap.data!.data() as Map<String, dynamic>?;
           status = data?['status'] ?? 'not_marked';
         }
-        final Color sc = status == 'present' ? const Color(0xFF7ECFB3)
+        final Color sc = status == 'present' ? const Color(0xFFF15A29)
           : status == 'absent' ? Colors.red
           : status == 'late' ? const Color(0xFFD4A857)
           : Colors.white24;
@@ -1574,10 +1574,10 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
 
         return Container(
           margin: const EdgeInsets.only(bottom: 10), padding: const EdgeInsets.all(14),
-          decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: sc.withOpacity(0.2))),
+          decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: sc.withOpacity(0.2))),
           child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Row(children: [
-              Container(width: 40, height: 40, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.person, color: Color(0xFF7ECFB3), size: 22)),
+              Container(width: 40, height: 40, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), shape: BoxShape.circle), child: const Icon(Icons.person, color: Color(0xFFF15A29), size: 22)),
               const SizedBox(width: 12),
               Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(workerName, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white)),
@@ -1588,7 +1588,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
             ]),
             const SizedBox(height: 10),
             Row(children: [
-              Expanded(child: _attendBtn('Present', const Color(0xFF7ECFB3), () => JobService.markAttendance(jobId: jobId, workerId: workerId, workerName: workerName, companyName: company, status: 'present'))),
+              Expanded(child: _attendBtn('Present', const Color(0xFFF15A29), () => JobService.markAttendance(jobId: jobId, workerId: workerId, workerName: workerName, companyName: company, status: 'present'))),
               const SizedBox(width: 8),
               Expanded(child: _attendBtn('Absent', Colors.red, () => JobService.markAttendance(jobId: jobId, workerId: workerId, workerName: workerName, companyName: company, status: 'absent'))),
               const SizedBox(width: 8),
@@ -1629,14 +1629,14 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
               Text(company, style: const TextStyle(fontSize: 13, color: Color(0xFFD4A857))),
               const SizedBox(height: 16),
               Container(
-                decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.15))),
+                decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.15))),
                 child: TextField(
                   onChanged: (v) => setState(() => _sitesSearch = v.toLowerCase()),
                   style: const TextStyle(fontSize: 14, color: Colors.white),
                   decoration: const InputDecoration(
                     hintText: 'Site title / location தேடுங்கள்...',
                     hintStyle: TextStyle(color: Colors.white30, fontSize: 13),
-                    prefixIcon: Icon(Icons.search, color: Color(0xFF7ECFB3), size: 20),
+                    prefixIcon: Icon(Icons.search, color: Color(0xFFF15A29), size: 20),
                     border: InputBorder.none, contentPadding: EdgeInsets.symmetric(vertical: 12)),
                 ),
               ),
@@ -1657,11 +1657,11 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
                   final applicantCount = (data['applicants'] as List?)?.length ?? 0;
                   return Container(
                     margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+                    decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                         Expanded(child: Text(data['title'] ?? '', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))),
-                        Container(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4), decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(6)), child: const Text('Active', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3)))),
+                        Container(padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4), decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(6)), child: const Text('Active', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFFF15A29)))),
                       ]),
                       const SizedBox(height: 8),
                       Row(children: [const Icon(Icons.location_on, size: 12, color: Colors.white38), const SizedBox(width: 4), Text(data['location'] ?? '', style: const TextStyle(fontSize: 12, color: Colors.white54))]),
@@ -1670,7 +1670,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
                         const Icon(Icons.people, size: 12, color: Colors.white38), const SizedBox(width: 4),
                         Text('$applicantCount applied', style: const TextStyle(fontSize: 12, color: Colors.white54)),
                         const SizedBox(width: 12),
-                        Text(data['wage'] ?? '', style: const TextStyle(fontSize: 12, color: Color(0xFF7ECFB3), fontWeight: FontWeight.bold)),
+                        Text(data['wage'] ?? '', style: const TextStyle(fontSize: 12, color: Color(0xFFF15A29), fontWeight: FontWeight.bold)),
                       ]),
                     ]),
                   );
@@ -1704,7 +1704,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
             future: JobService.getMonthlyPayroll(company),
             builder: (context, snap) {
               if (snap.connectionState == ConnectionState.waiting) {
-                return const Center(child: Padding(padding: EdgeInsets.all(32), child: CircularProgressIndicator(color: Color(0xFF7ECFB3))));
+                return const Center(child: Padding(padding: EdgeInsets.all(32), child: CircularProgressIndicator(color: Color(0xFFF15A29))));
               }
               final rows = snap.data ?? [];
               if (rows.isEmpty) {
@@ -1714,11 +1714,11 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
               return Column(children: [
                 Container(
                   width: double.infinity, padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.3))),
+                  decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.3))),
                   child: Column(children: [
                     const Text('Total Payable (இந்த மாசம்)', style: TextStyle(fontSize: 12, color: Colors.white54)),
                     const SizedBox(height: 4),
-                    Text('Rs.${grandTotal.toStringAsFixed(0)}', style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                    Text('Rs.${grandTotal.toStringAsFixed(0)}', style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                   ]),
                 ),
                 const SizedBox(height: 12),
@@ -1743,15 +1743,15 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
                   final payable = r['totalPayable'] as double;
                   return Container(
                     margin: const EdgeInsets.only(bottom: 10), padding: const EdgeInsets.all(14),
-                    decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+                    decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
                     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                       Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                         Text(r['workerName'] ?? '', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white)),
-                        Text('Rs.${payable.toStringAsFixed(0)}', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                        Text('Rs.${payable.toStringAsFixed(0)}', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                       ]),
                       const SizedBox(height: 8),
                       Row(children: [
-                        _payrollChip('Present', present, const Color(0xFF7ECFB3)),
+                        _payrollChip('Present', present, const Color(0xFFF15A29)),
                         const SizedBox(width: 8),
                         _payrollChip('Late', late, const Color(0xFFD4A857)),
                         const SizedBox(width: 8),
@@ -1788,7 +1788,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
       padding: const EdgeInsets.all(20),
       child: Column(children: [
         const SizedBox(height: 20),
-        Container(width: 88, height: 88, decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: const Color(0xFF7ECFB3), width: 2)), child: const Icon(Icons.engineering, color: Color(0xFF7ECFB3), size: 44)),
+        Container(width: 88, height: 88, decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), shape: BoxShape.circle, border: Border.all(color: const Color(0xFFF15A29), width: 2)), child: const Icon(Icons.engineering, color: Color(0xFFF15A29), size: 44)),
         const SizedBox(height: 16),
         Text(name, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white)),
         if (qual.isNotEmpty) Text('$qual - $spec', style: const TextStyle(fontSize: 13, color: Color(0xFFD4A857))),
@@ -1805,7 +1805,7 @@ class _SiteEngineerDashboardState extends State<SiteEngineerDashboard> {
           },
           icon: const Icon(Icons.edit_outlined, size: 18),
           label: const Text('Edit Profile'),
-          style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFF7ECFB3), side: const BorderSide(color: Color(0xFF7ECFB3)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+          style: OutlinedButton.styleFrom(foregroundColor: const Color(0xFFF15A29), side: const BorderSide(color: Color(0xFFF15A29)), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
         )),
       ]),
     );
@@ -1841,7 +1841,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
   @override
   Widget build(BuildContext context) {
     if (!_loaded) {
-      return const Scaffold(backgroundColor: Color(0xFF080C10), body: Center(child: CircularProgressIndicator(color: Color(0xFF7ECFB3))));
+      return const Scaffold(backgroundColor: Color(0xFF1C2A72), body: Center(child: CircularProgressIndicator(color: Color(0xFFF15A29))));
     }
 
     final status = _profile?['status'] ?? 'pending';
@@ -1854,7 +1854,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
   Widget _buildWaitingScreen() {
     final company = _profile?['requestedCompany'] ?? '';
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: Center(
         child: Padding(
@@ -1872,7 +1872,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
               onPressed: _loadProfile,
               icon: const Icon(Icons.refresh), label: const Text('Refresh Status'),
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF7ECFB3), foregroundColor: const Color(0xFF080C10),
+                backgroundColor: const Color(0xFFF15A29), foregroundColor: const Color(0xFF1C2A72),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))))),
           ]),
         ),
@@ -1882,7 +1882,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
 
   Widget _buildRejectedScreen() {
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: Center(
         child: Padding(
@@ -1905,7 +1905,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
     final isFull = permission == 'full';
 
     return Scaffold(
-      backgroundColor: const Color(0xFF080C10),
+      backgroundColor: const Color(0xFF1C2A72),
       appBar: _buildDashboardAppBar(context, mounted),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -1918,9 +1918,9 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
               ])),
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.15), borderRadius: BorderRadius.circular(8)),
+                decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(8)),
                 child: Text(isFull ? 'Full Access' : 'Attendance Only',
-                  style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                  style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
               ),
             ]),
             const SizedBox(height: 6),
@@ -1965,7 +1965,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
                     final applicantCount = (data['applicants'] as List?)?.length ?? 0;
                     return Container(
                       margin: const EdgeInsets.only(bottom: 12), padding: const EdgeInsets.all(16),
-                      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+                      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(14), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                         Text(data['title'] ?? '', style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white)),
                         const SizedBox(height: 6),
@@ -1973,7 +1973,7 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
                           const Icon(Icons.location_on, size: 12, color: Colors.white38), const SizedBox(width: 4),
                           Text(data['location'] ?? '', style: const TextStyle(fontSize: 12, color: Colors.white54)),
                           const SizedBox(width: 12),
-                          Text('$applicantCount applied', style: const TextStyle(fontSize: 12, color: Color(0xFF7ECFB3))),
+                          Text('$applicantCount applied', style: const TextStyle(fontSize: 12, color: Color(0xFFF15A29))),
                         ]),
                       ]),
                     );
@@ -1988,16 +1988,16 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
                 future: JobService.getMonthlyPayroll(company),
                 builder: (context, snap) {
                   final rows = snap.data ?? [];
-                  if (snap.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator(color: Color(0xFF7ECFB3)));
+                  if (snap.connectionState == ConnectionState.waiting) return const Center(child: CircularProgressIndicator(color: Color(0xFFF15A29)));
                   if (rows.isEmpty) return _emptyState(Icons.payments_outlined, 'இந்த மாசம் attendance இல்லை');
                   final grandTotal = rows.fold<double>(0, (s, r) => s + (r['totalPayable'] as double));
                   return Column(children: [
                     Container(
                       width: double.infinity, padding: const EdgeInsets.all(14),
-                      decoration: BoxDecoration(color: const Color(0xFF7ECFB3).withOpacity(0.1), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.3))),
+                      decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.1), borderRadius: BorderRadius.circular(12), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.3))),
                       child: Column(children: [
                         const Text('Total Payable', style: TextStyle(fontSize: 11, color: Colors.white54)),
-                        Text('Rs.${grandTotal.toStringAsFixed(0)}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                        Text('Rs.${grandTotal.toStringAsFixed(0)}', style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                       ]),
                     ),
                     const SizedBox(height: 10),
@@ -2017,10 +2017,10 @@ class _QsAdminDashboardState extends State<QsAdminDashboard> {
                     const SizedBox(height: 12),
                     ...rows.map((r) => Container(
                       margin: const EdgeInsets.only(bottom: 8), padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(color: const Color(0xFF1A1F2E), borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFF7ECFB3).withOpacity(0.1))),
+                      decoration: BoxDecoration(color: const Color(0xFF2E3D90), borderRadius: BorderRadius.circular(10), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.1))),
                       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                         Text(r['workerName'] ?? '', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white)),
-                        Text('Rs.${(r['totalPayable'] as double).toStringAsFixed(0)}', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Color(0xFF7ECFB3))),
+                        Text('Rs.${(r['totalPayable'] as double).toStringAsFixed(0)}', style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Color(0xFFF15A29))),
                       ]),
                     )),
                   ]);
