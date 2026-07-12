@@ -6,6 +6,7 @@ import 'firebase_options.dart';
 import 'screens/auth/login_signup_screen.dart';
 import 'screens/auth/worker_signup.dart';
 import 'screens/auth/worker_type_screen.dart';
+import 'screens/auth/client_type_screen.dart';
 import 'screens/auth/contractor_signup.dart';
 import 'screens/auth/homeowner_signup.dart';
 import 'screens/auth/site_engineer_signup.dart';
@@ -192,20 +193,55 @@ class SignupRoleSelectionScreen extends StatelessWidget {
               const SizedBox(height: 14),
               const Text('உங்கள் role select பண்ணுங்கள்', style: TextStyle(fontSize: 14, color: Colors.white54)),
               const SizedBox(height: 32),
-              _RoleCard(icon: Icons.construction, title: 'Worker', subtitle: 'Construction jobs find பண்ணலாம்', tamilText: 'தொழிலாளி',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WorkerTypeScreen()))),
-              const SizedBox(height: 14),
-              _RoleCard(icon: Icons.business_center, title: 'Contractor', subtitle: 'Workers hire பண்ணலாம்', tamilText: 'ஒப்பந்தக்காரர்',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ContractorSignupScreen()))),
-              const SizedBox(height: 14),
-              _RoleCard(icon: Icons.home, title: 'Homeowner', subtitle: 'Home work book பண்ணலாம்', tamilText: 'வீட்டுடையார்',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const HomeownerSignupScreen()))),
-              const SizedBox(height: 14),
-              _RoleCard(icon: Icons.engineering, title: 'Site Engineer', subtitle: 'Sites manage பண்ணலாம்', tamilText: 'தள பொறியாளர்',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const SiteEngineerSignupScreen()))),
-              const SizedBox(height: 14),
-              _RoleCard(icon: Icons.fact_check_outlined, title: 'QS / Admin', subtitle: 'Company data cross-verify பண்ணலாம்', tamilText: 'நிர்வாகி',
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const QsAdminSignupScreen()))),
+              Material(
+                color: const Color(0xFFF15A29),
+                borderRadius: BorderRadius.circular(18),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(18),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const WorkerTypeScreen())),
+                  child: Container(
+                    width: double.infinity, padding: const EdgeInsets.all(22),
+                    child: Row(children: [
+                      Container(width: 58, height: 58,
+                        decoration: BoxDecoration(color: Colors.white.withOpacity(0.2), borderRadius: BorderRadius.circular(16)),
+                        child: const Icon(Icons.construction, color: Colors.white, size: 30)),
+                      const SizedBox(width: 18),
+                      Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                        const Text('நான் ஒரு தொழிலாளி', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Color(0xFF1C2A72))),
+                        const SizedBox(height: 4),
+                        Text('I\'m a Worker — வேலை தேடுறேன்', style: TextStyle(fontSize: 12, color: const Color(0xFF1C2A72).withOpacity(0.7))),
+                      ])),
+                      const Icon(Icons.arrow_forward_ios, color: Color(0xFF1C2A72), size: 16),
+                    ]),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+              Material(
+                color: const Color(0xFF2E3D90),
+                borderRadius: BorderRadius.circular(18),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(18),
+                  splashColor: const Color(0xFFF15A29).withOpacity(0.15),
+                  onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const ClientTypeScreen())),
+                  child: Container(
+                    width: double.infinity, padding: const EdgeInsets.all(22),
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(18), border: Border.all(color: const Color(0xFFF15A29).withOpacity(0.25))),
+                    child: Row(children: [
+                      Container(width: 58, height: 58,
+                        decoration: BoxDecoration(color: const Color(0xFFF15A29).withOpacity(0.15), borderRadius: BorderRadius.circular(16)),
+                        child: const Icon(Icons.groups, color: Color(0xFFF15A29), size: 30)),
+                      const SizedBox(width: 18),
+                      Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                        const Text('எனக்கு தொழிலாளி வேணும்', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white)),
+                        const SizedBox(height: 4),
+                        const Text('I Need a Worker — hire பண்ணணும்', style: TextStyle(fontSize: 12, color: Colors.white54)),
+                      ])),
+                      const Icon(Icons.arrow_forward_ios, color: Color(0xFFF15A29), size: 16),
+                    ]),
+                  ),
+                ),
+              ),
               const SizedBox(height: 24),
             ],
           ),
